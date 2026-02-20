@@ -1,0 +1,50 @@
+name: Deploy to Amazon CloudFront
+
+on:
+    push:
+        branches:
+            - main # 배포할 브랜치 이름 (main 또는 master)
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+
+        steps:
+            # 1. 소스 코드 체크아웃
+            - name: Checkout source code
+              uses: actions/checkout@v4
+
+            # 2. Node.js 설정 (React/Vue/Next 등 빌드가 필요한 경우)
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: '20' # 프로젝트에 맞는 버전 사용
+
+            # 3. 의존성 설치 및 빌드
+            - name: Install dependencies and Build
+              run: |
+                  npm ci
+                  npm run build
+              # 빌드 결과물이 'dist'나 'build' 폴더에 생성됩니다.
+              # 아래 S3 업로드 경로에서 이 폴더명을 맞춰주세요.
+
+            # 4. AWS 자격 증명 설정
+            - name: Configure AWS Credentials
+              uses: aws-actions/configure-aws-credentials@v4
+              with:
+                  aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+                  aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+                  aws-region: ${{ secrets.AWS_REGION }}
+
+            # 5. S3에 빌드 파일 업로드 (기존 파일 삭제 후 동기화)
+            - name: Sync to S3
+              run: |
+                  # ./dist 부분을 실제 빌드 결과물 폴더명(build, out 등)으로 수정하세요.
+                  aws s3 sync ./dist s3://${{ secrets.AWS_S3_BUCKET }} --delete
+
+            # 6. CloudFront 캐시 무효화 (배포 즉시 반영)
+            - name: Invalidate CloudFront Cache
+              run: |
+                  aws cloudfront create-invalidation \
+                    --distribution-id ${{ secrets.AWS_CLOUDFRONT_ID }} \
+                    --paths "/*"

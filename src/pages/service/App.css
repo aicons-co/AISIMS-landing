@@ -1,0 +1,122 @@
+#root {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+}
+
+.logo {
+	height: 6em;
+	padding: 1.5em;
+	will-change: filter;
+	transition: filter 300ms;
+}
+.logo:hover {
+	filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+	filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	a:nth-of-type(2) .logo {
+		animation: logo-spin infinite 20s linear;
+	}
+}
+
+.card {
+	padding: 2em;
+}
+
+.read-the-docs {
+	color: #888;
+}
+
+/* --- Simple layout for auth prototype --- */
+.app-shell {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+
+.app-header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 12px;
+}
+
+.app-nav {
+	display: flex;
+	gap: 12px;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.app-nav a {
+	padding: 6px 12px;
+	border: 1px solid #3a3a3a;
+	border-radius: 6px;
+}
+
+.app-main {
+	display: flex;
+	justify-content: center;
+}
+
+.auth-section {
+	width: 100%;
+	max-width: 420px;
+	text-align: left;
+}
+
+.auth-form {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	margin-top: 16px;
+}
+
+.auth-form label {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	font-size: 14px;
+}
+
+.auth-form input[type='text'],
+.auth-form input[type='email'],
+.auth-form input[type='password'],
+.auth-form input[type='tel'] {
+	padding: 10px 12px;
+	border-radius: 8px;
+	border: 1px solid #3a3a3a;
+	background: #1a1a1a;
+	color: inherit;
+}
+
+.auth-form .checkbox {
+	flex-direction: row;
+	align-items: center;
+	gap: 8px;
+}
+
+.row {
+	display: flex;
+	justify-content: space-between;
+	gap: 12px;
+}
+
+.error-text {
+	color: #ff6b6b;
+	font-size: 12px;
+}

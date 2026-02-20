@@ -1,0 +1,39 @@
+version: 0.2
+
+env:
+    variables:
+        S3_BUCKET: 'aisims-client-source'
+        CLOUDFRONT_DISTRIBUTION_ID: 'E2MCF25GW7WUTF'
+
+phases:
+    install:
+        # [수정 1] Node.js 20 버전 명시 (필수!)
+        runtime-versions:
+            nodejs: 22
+        commands:
+            - echo "Install dependencies"
+            - npm ci || npm install
+
+    build:
+        commands:
+            - echo "Build React app"
+            - npm run build
+            # [디버깅용] 빌드 후 실제 폴더명이 무엇인지 로그로 확인
+            - ls -la
+
+    post_build:
+        commands:
+            - echo "Upload build files to S3..."
+            # [중요 2] Vite 기본 빌드 폴더인 'dist/'를 업로드합니다.
+            # --delete 옵션: 로컬에 없는 파일은 S3에서도 삭제하여 동기화 (깔끔한 배포)
+            - aws s3 sync dist/ s3://$S3_BUCKET --delete
+
+            - echo "Invalidating CloudFront Cache..."
+            # [중요 3] 배포 직후 캐시를 삭제해야 사용자가 새 버전을 바로 볼 수 있습니다.
+            - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths "/*"
+
+artifacts:
+    files:
+        - '**/*'
+    # [수정 3] 아티팩트 경로도 dist로 변경
+    base-directory: dist
