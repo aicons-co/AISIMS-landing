@@ -1,5 +1,7 @@
 import { apiClient } from '../client';
-// import { SignUpRequest, LoginRequest } from './auth.type'
+
+type LoginRequest = { email: string; password: string };
+type SignUpRequest = { email: string; password: string; name: string };
 
 export const login = (data: LoginRequest) =>
   apiClient.post('/auth/login', data);

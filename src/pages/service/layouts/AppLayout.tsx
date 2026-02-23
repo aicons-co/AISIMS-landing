@@ -1,5 +1,5 @@
-import { Suspense, lazy, useState, useEffect } from 'react'
-import { Route, Routes, Outlet, useLocation } from 'react-router-dom'
+import { Suspense, useState, useEffect } from 'react'
+import { Outlet, useLocation } from 'react-router-dom'
 import { Header } from '../components/Header'
 import { Sidebar } from '../components/Sidebar'
 

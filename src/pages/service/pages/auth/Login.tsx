@@ -3,7 +3,6 @@ import LogoWhite from '../../../landing/assets/Logo-white.svg';
 
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from '../../contexts/AuthContext'; // ContextAPI
 import { useAuthStore } from '../../store/authStore'; // Zustand
 
 type LoginFormValues = {

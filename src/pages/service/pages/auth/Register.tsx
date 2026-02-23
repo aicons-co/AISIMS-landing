@@ -1,4 +1,3 @@
-import { useState, useRef } from 'react'
 import { useForm } from 'react-hook-form'
 import ResterStep1Img from '../../../../../public/assets/auth/resister-img-step1.png'
 
@@ -16,7 +15,6 @@ export function Register() {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
-    setValue,
   } = useForm<RegisterFormValues>({
     defaultValues: {
       email: '',

@@ -144,7 +144,7 @@ export function ProjectsList() {
 
   // 임시: 내 정보 조회 불러오기
   const serverUrl = import.meta.env.VITE_API_SERVER
-  const [userInfo, setUserInfo] = useState()
+  const [userInfo, setUserInfo] = useState<{ name: string } | undefined>()
 
   const onUserInfo = async () => {
     const accessToken = useAuthStore.getState().accessToken

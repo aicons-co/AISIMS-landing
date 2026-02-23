@@ -1,8 +1,8 @@
 // 기존 src/App.tsx
 
 import './App.css'
-import { Route, Routes, useLocation } from 'react-router-dom'
-import { Suspense, lazy, useState, useEffect } from 'react'
+import { Route, Routes } from 'react-router-dom'
+import { lazy, useState, useEffect } from 'react'
 import { Login } from './pages/auth/Login'
 import { Register } from './pages/auth/Register'
 import { Profile } from './pages/auth/Profile'
@@ -75,7 +75,6 @@ const ProjectSchedule = lazy(() =>
 // const ProjectSchedule = lazy(() => import('./pages/project/ProjectScheduleSimple').then(module => ({ default: module.ProjectScheduleSimple })));
 
 function AppContent() {
-  const location = useLocation()
   // 초기 화면 크기 확인
   const getInitialIsMobile = () => {
     if (typeof window === 'undefined') return false
@@ -104,11 +103,6 @@ function AppContent() {
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)
   }, [isSidebarCollapsed, isMobile])
-
-  // 인증 페이지에서는 사이드바 숨김
-  const isAuthPage =
-    location.pathname.startsWith('/auth/') || location.pathname === '/'
-  const showSidebar = !isAuthPage
 
   return (
     <>

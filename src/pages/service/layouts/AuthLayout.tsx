@@ -1,8 +1,7 @@
-import { Suspense, lazy, useState, useEffect } from 'react'
-import { Route, Routes, Outlet, useLocation } from 'react-router-dom'
+import { Suspense, useState, useEffect } from 'react'
+import { Outlet } from 'react-router-dom'
 
 export default function AuthLayout() {
-  const location = useLocation()
   // 초기 화면 크기 확인
   const getInitialIsMobile = () => {
     if (typeof window === 'undefined') return false

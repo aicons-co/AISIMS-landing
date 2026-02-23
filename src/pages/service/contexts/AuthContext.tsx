@@ -72,11 +72,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         },
       );
 
-      const { accessToken, refreshToken } = response.data.data;
-      // console.log('accessToken: ', accessToken)
-      // console.log('refreshToken: ', refreshToken)
+      const responseData = response.data as { user: User; data?: { accessToken: string; refreshToken: string } };
 
-      setUser(response.data.user);
+      setUser(responseData.user);
     } catch (error) {
       if (axios.isAxiosError(error)) {
         throw new Error(
