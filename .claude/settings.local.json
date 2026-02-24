@@ -12,7 +12,8 @@
       "Bash(vercel:*)",
       "Bash(npx tsc:*)",
       "WebFetch(domain:aisims.aicons.co.kr)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(npx vercel:*)"
     ]
   }
 }

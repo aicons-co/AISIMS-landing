@@ -84,7 +84,7 @@ export function CaseProjectSection() {
                     />
                     <div
                       className="
-                        flex-1 w-[3px] -mt-0.5
+                        flex-1 w-0.5 -mt-0.5
                         bg-linear-to-b from-secondary-secondary/50 to-transparent
                         rounded-full
                         "
