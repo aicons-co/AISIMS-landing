@@ -1,8 +1,8 @@
-import LogoGray from '../assets/logo-gray.svg'
-import EmailIcon from '../assets/footer-icon-mail.png'
-import BuildingIcon from '../assets/footer-icon-building.png'
+import LogoGray from '../assets/logo-gray.svg';
+import EmailIcon from '../assets/footer-icon-mail.png';
+import BuildingIcon from '../assets/footer-icon-building.png';
 
-const footerItems = ['Home', 'Solutions', 'Support', 'Contact']
+const footerItems = ['Home', 'Solutions', 'Support', 'Contact'];
 
 export function Footer() {
   return (
@@ -21,7 +21,7 @@ export function Footer() {
               {footerItems.map((item, idx) => (
                 <div
                   key={idx}
-                  className="flex text-base font-bold text-neutral-100/50 leading-[150%] hover:cursor-pointer"
+                  className="flex text-base font-medium text-neutral-100/50 leading-[150%] hover:cursor-pointer"
                 >
                   {item}
                 </div>
@@ -31,7 +31,7 @@ export function Footer() {
 
           <div className="flex justify-between items-end text-[#666A6D]">
             <div>
-              <p className="mb-4 font-bold">Contact Info</p>
+              <p className="mb-4 font-semibold">Contact Info</p>
               <p className="flex items-center text-base leading-[150%]">
                 <img src={EmailIcon} className="w-4 mr-2.5" />
                 contact@aisims.com
@@ -48,5 +48,5 @@ export function Footer() {
         </div>
       </div>
     </section>
-  )
+  );
 }

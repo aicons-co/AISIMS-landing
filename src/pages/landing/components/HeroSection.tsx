@@ -1,7 +1,10 @@
+import { useNavigate } from 'react-router-dom';
 import heroIllust from '../assets/hero-illust.png';
 import AIIcon from '../assets/AI-icon.png';
 
 export function HeroSection() {
+  const navigate = useNavigate();
+
   return (
     <section className="bg-[#020403]">
       {/* relative: 내부 absolute 요소(이미지)의 기준점 */}
@@ -17,14 +20,14 @@ export function HeroSection() {
               Information Management System
             </h1>
 
-            <p className="mb-12 text-lg text-neutral-500 leading-[150%]">
+            <p className="mb-12 text-lg text-neutral-500 font-regular leading-[150%]">
               Automating structural design parsing through BIM,
               <br />
               quantities, rebar optimization, drawings and construction planning
             </p>
 
             <div className="flex gap-[15px]">
-              <button
+              {/* <button
                 className="
                 px-6 py-2.5
                 text-base text-neutral-100
@@ -34,8 +37,9 @@ export function HeroSection() {
                 "
               >
                 Get Demo
-              </button>
+              </button> */}
               <button
+                onClick={() => window.open('http://158.247.252.50', '_blank')}
                 className="
                 flex items-center
                 px-6 py-2.5

@@ -49,7 +49,7 @@ export function CaseProjectSection() {
     <section className=" bg-neutral-100">
       <div className="relative max-w-[1920px] mx-auto pt-32 pb-28">
         <div className="w-full max-w-[1400px] mx-auto">
-          <h2 className="mb-20 text-[40px] text-neutral-1000 font-bold">
+          <h2 className="mb-20 text-[40px] text-neutral-1000 font-semibold tracking-[-1%]">
             Case Projects
           </h2>
 
@@ -69,7 +69,7 @@ export function CaseProjectSection() {
                   hover:shadow-[3px_10px_20px_#9244FF]/15
                 `}
               >
-                <h3 className="text-[24px] text-neutral-1000 font-bold">
+                <h3 className="text-[24px] text-neutral-1000 font-semibold">
                   {card.title}
                 </h3>
 
@@ -96,7 +96,7 @@ export function CaseProjectSection() {
                     {card.items.map((item, idx) => (
                       <li
                         key={idx}
-                        className="flex text-base text-neutral-600 leading-7"
+                        className="flex text-base text-neutral-600 font-regular leading-7"
                       >
                         <span className="flex items-start">
                           <span className="mt-3 mr-2 w-1 h-1 bg-neutral-600 rounded-full shrink-0" />

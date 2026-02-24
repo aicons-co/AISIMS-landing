@@ -2,12 +2,17 @@
 
 /* Base layout helpers */
 html,
-body,
+body {
+  @apply font-poppins;
+}
+
 #root {
   height: 100%;
 }
 
 @theme {
+  --font-poppins: 'Poppins', sans-serif;
+
   --color-primary-lighter: #3ce2f8;
   --color-primary-light: #24d1e8;
   --color-primary-primary: #1bc1d7;

@@ -19,8 +19,8 @@ type HeaderProps = {
 };
 
 const navItems: { label: string; key: SectionKey }[] = [
-  { label: 'Home', key: 'home' },
-  { label: 'MeasurableValue', key: 'measurableValue' },
+  // { label: 'Home', key: 'home' },
+  { label: 'Measurable Value', key: 'measurableValue' },
   { label: 'Services', key: 'services' },
   { label: 'Technology', key: 'technology' },
   { label: 'Resources', key: 'resources' },
@@ -62,10 +62,11 @@ export function Header({ onScrolled }: HeaderProps) {
           <img
             src={scrolled ? LogoBlack : LogoWhite}
             alt="AISIMS 로고 흰색"
-            className="h-auto w-[130px]"
+            onClick={() => onScrolled('home')}
+            className="w-[130px] h-auto cursor-pointer"
           />
 
-          <nav className="flex flex-row gap-17 text-base">
+          <nav className="flex flex-row gap-17 text-base font-regular">
             {navItems.map((item, idx) => (
               <p
                 key={idx}
@@ -78,7 +79,7 @@ export function Header({ onScrolled }: HeaderProps) {
           </nav>
 
           <button
-            onClick={() => navigate('/landing')}
+            onClick={() => window.open('http://158.247.252.50', '_blank')}
             className="
             flex items-center
             px-6 py-2.5

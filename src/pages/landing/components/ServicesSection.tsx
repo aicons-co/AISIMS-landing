@@ -67,7 +67,7 @@ const servicesCards = [
     items: [
       'Rebar–structure–MEP clash review',
       'BIM-based issue visualization',
-      'Constructability improvement',
+      'Contractibility improvement',
     ],
     icon: ClashDetectIcon,
     isActive: false,
@@ -79,7 +79,7 @@ export function ServicesSection() {
     <section className=" bg-neutral-100">
       <div className="max-w-[1920px] mx-auto pt-32 pb-28">
         <div className="w-full max-w-[1400px] mx-auto">
-          <h2 className="text-[40px] font-bold text-neutral-1000 mb-20">
+          <h2 className="mb-20 text-[40px] text-neutral-1000 font-semibold tracking-[-1%]">
             Services
           </h2>
 
@@ -106,7 +106,7 @@ export function ServicesSection() {
                   className="w-16 h-16 mb-7.5"
                 />
 
-                <h3 className="text-[18px] font-bold text-neutral-1000 mb-5">
+                <h3 className="text-[18px] font-semibold text-neutral-1000 mb-5">
                   {card.title}
                 </h3>
 
@@ -116,10 +116,10 @@ export function ServicesSection() {
                   {card.items.map((item, idx) => (
                     <li
                       key={idx}
-                      className="flex text-[16px]  text-neutral-600 leading-[150%]"
+                      className="flex text-[16px] text-neutral-600 font-regular leading-[150%]"
                     >
                       <span className="flex items-start">
-                        <span className="w-1 h-1 mt-3 mr-2  bg-neutral-600 rounded-full shrink-0" />
+                        <span className="w-1 h-1 mt-3 mr-2 bg-neutral-600 rounded-full shrink-0" />
                         {item}
                       </span>
                     </li>

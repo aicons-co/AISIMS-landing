@@ -80,7 +80,7 @@ export function TechnologySection() {
         />
 
         <div className="w-full max-w-[1400px] mx-auto">
-          <h2 className="mb-20 text-[40px] text-neutral-100 font-bold">
+          <h2 className="mb-20 text-[40px] text-neutral-100 font-semibold tracking-[-1%]">
             Technology
           </h2>
 
@@ -110,7 +110,7 @@ export function TechnologySection() {
                   {card.items.map((item, idx) => (
                     <li
                       key={idx}
-                      className="flex text-base  text-neutral-300 leading-[150%]"
+                      className="flex text-base text-neutral-300 font-regular leading-[150%]"
                     >
                       <span className="flex items-start">
                         <span className="mt-3 mr-2 w-1 h-1 bg-neutral-300 rounded-full shrink-0" />

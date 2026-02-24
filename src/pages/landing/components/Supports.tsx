@@ -1,11 +1,11 @@
-import { useState } from 'react'
-import EllipseRight from '../assets/supports-illust-ellipse-13.png'
-import EllipseLeft from '../assets/supports-illust-ellipse-14.png'
-import TutorialImg from '../assets/supports-img-tutorial.png'
-import OptimizationCasesImg from '../assets/supports-img-optimization-case.png'
-import ArrowRightIcon from '../assets/supports-icon-arrow-right.png'
-import ListArrowUpIcon from '../assets/supports-icon-list-arrow-up.png'
-import ListArrowDownIcon from '../assets/supports-icon-list-arrow-down.png'
+import { useState } from 'react';
+import EllipseRight from '../assets/supports-illust-ellipse-13.png';
+import EllipseLeft from '../assets/supports-illust-ellipse-14.png';
+import TutorialImg from '../assets/supports-img-tutorial.png';
+import OptimizationCasesImg from '../assets/supports-img-optimization-case.png';
+import ArrowRightIcon from '../assets/supports-icon-arrow-right.png';
+import ListArrowUpIcon from '../assets/supports-icon-list-arrow-up.png';
+import ListArrowDownIcon from '../assets/supports-icon-list-arrow-down.png';
 
 export function Supports() {
   const FAQCards = [
@@ -25,7 +25,7 @@ export function Supports() {
       linkLabel: 'View examples',
       image: OptimizationCasesImg,
     },
-  ]
+  ];
 
   const FAQData = [
     {
@@ -64,16 +64,16 @@ export function Supports() {
       ],
       isOpen: false,
     },
-  ]
+  ];
 
-  const [FAQList, setFAQList] = useState(FAQData)
+  const [FAQList, setFAQList] = useState(FAQData);
   const toggleFAQ = (index: number) => {
     setFAQList((prevState) =>
       prevState.map((faq, i) =>
-        i === index ? { ...faq, isOpen: !faq.isOpen } : faq
-      )
-    )
-  }
+        i === index ? { ...faq, isOpen: !faq.isOpen } : faq,
+      ),
+    );
+  };
 
   return (
     <section className=" bg-[#05011D]">
@@ -88,7 +88,7 @@ export function Supports() {
         />
 
         <div className="w-full max-w-[1400px] mx-auto">
-          <h2 className="mb-20 text-[40px] text-neutral-100 font-bold">
+          <h2 className="mb-20 text-[40px] text-neutral-100 font-semibold tracking-[-1%]">
             Supports
           </h2>
 
@@ -126,7 +126,7 @@ export function Supports() {
                     </p>
                   ))}
                 </div>
-                <p className="flex items-center text-xl text-[#1BC1D7]">
+                <p className="flex items-center text-xl text-[#1BC1D7] font-light">
                   {card.linkLabel}
                   <img src={ArrowRightIcon} className="w-8 ml-[5px]" />
                 </p>
@@ -152,12 +152,12 @@ export function Supports() {
                 FAQ
               </h3>
 
-              <p className="mb-10 text-[18px] text-neutral-500 leading-[150%]">
+              <p className="mb-10 text-[18px] text-neutral-500 font-regular leading-[150%]">
                 Frequently asked questions and troubleshooting guides for common
                 issues.
               </p>
 
-              <p className="flex items-center text-xl text-[#1BC1D7] cursor-pointer z-10">
+              <p className="flex items-center text-xl text-[#1BC1D7] font-light cursor-pointer z-10">
                 See all FAQs
                 <img src={ArrowRightIcon} className="w-8 ml-[5px]" />
               </p>
@@ -167,8 +167,8 @@ export function Supports() {
             <div className="w-full lg:w-3/5">
               <div className="flex flex-col">
                 {FAQList.map((question, idx) => {
-                  console.log('idx: ', idx)
-                  const isOpen = question.isOpen
+                  console.log('idx: ', idx);
+                  const isOpen = question.isOpen;
 
                   return (
                     <div key={idx} className="border-b border-neutral-600">
@@ -185,7 +185,7 @@ export function Supports() {
 
                         {/* 질문 타이틀 및 화살표 아이콘 */}
                         <div className="flex justify-between items-start w-full pr-5">
-                          <span className="pr-4 text-lg text-neutral-100 leading-[150%]">
+                          <span className="pr-4 text-lg text-neutral-100 font-medium leading-[150%]">
                             {question.title}
                           </span>
                           {isOpen ? (
@@ -203,12 +203,12 @@ export function Supports() {
                           ${isOpen ? 'pb-6 opacity-100' : 'opacity-0'}
                         `}
                       >
-                        <div className="text-neutral-400 leading-[150%]">
+                        <div className="text-neutral-400 font-regular leading-[150%]">
                           {isOpen ? question.items : ''}
                         </div>
                       </div>
                     </div>
-                  )
+                  );
                 })}
               </div>
             </div>
@@ -216,5 +216,5 @@ export function Supports() {
         </div>
       </div>
     </section>
-  )
+  );
 }

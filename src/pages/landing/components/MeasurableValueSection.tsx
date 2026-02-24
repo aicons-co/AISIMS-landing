@@ -71,7 +71,7 @@ export function MeasurableValueSection() {
     <section className=" bg-[#F7F7F8]">
       <div className="relative max-w-[1920px] mx-auto pt-32 pb-28">
         <div className="w-full max-w-[1400px] mx-auto">
-          <h2 className="mb-20 text-[40px] text-neutral-1000 font-bold">
+          <h2 className="mb-20 text-[40px] text-neutral-1000 font-semibold tracking-[-1%]">
             Measurable Value
           </h2>
 
@@ -143,15 +143,21 @@ export function MeasurableValueSection() {
                     loop
                     muted
                     playsInline
-                    className="absolute inset-0 w-full h-full
-                    object-cover z-0 transition-transform duration-700 group-hover:scale-110"
+                    className="
+                      absolute inset-0 w-full h-full
+                      object-cover z-0 transition-transform duration-700
+                      group-hover:scale-110
+                    "
                   />
                 ) : (
                   <img
                     src={card.illust}
                     alt={`${card.title} background`}
-                    className="absolute inset-0 w-full h-full
-                    object-cover z-0 transition-transform duration-700 group-hover:scale-110"
+                    className="
+                      absolute inset-0 w-full h-full
+                      object-cover z-0 transition-transform duration-700
+                      group-hover:scale-110
+                    "
                   />
                 )}
 
@@ -176,7 +182,7 @@ export function MeasurableValueSection() {
                     />
                   </div>
 
-                  <h3 className="text-[20px] text-white font-bold mb-2">
+                  <h3 className="mb-2 text-[20px] text-white font-semibold">
                     {card.title}
                   </h3>
 
@@ -184,7 +190,7 @@ export function MeasurableValueSection() {
                     {card.items.map((item, idx) => (
                       <li
                         key={idx}
-                        className="text-sm text-gray-300 font-light"
+                        className="text-sm text-gray-300 font-regular"
                       >
                         {item}
                       </li>
@@ -194,10 +200,15 @@ export function MeasurableValueSection() {
 
                 {/* 4. 카드 우측 하단 큰 숫자 (flex를 사용하여 하단 끝으로 밀어냄) */}
                 <div className="relative z-20 flex justify-end items-baseline">
-                  <span className="text-5xl md:text-6xl font-bold text-white tracking-tighter">
+                  <span
+                    className="
+                      text-5xl md:text-6xl
+                      font-semibold text-white tracking-tighter
+                      "
+                  >
                     {card.highlightValue}
                   </span>
-                  <span className="text-2xl md:text-3xl font-bold text-white ml-1">
+                  <span className="ml-1 text-2xl md:text-3xl font-semibold text-white">
                     {card.unit}
                   </span>
                 </div>
