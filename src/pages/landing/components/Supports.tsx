@@ -29,29 +29,39 @@ export function Supports() {
 
   const FAQData = [
     {
+      title: 'What types of structural projects does AISIMS support?',
+      items: [
+        'AISIMS supports a wide range of structural projects including residential buildings, commercial buildings, and large-scale infrastructure such as diaphragm walls. The platform handles columns, beams, slabs, walls, and foundations with rebar-inclusive BIM modeling, all compliant with IFC 4.3 standards.',
+      ],
+      isOpen: false,
+    },
+    {
+      title: 'How accurate is the automated quantity take-off (QTO)?',
+      items: [
+        'AISIMS achieves over 99.9% accuracy in quantity calculations through AI-based data extraction and a dual integrity verification system. This eliminates human errors inherent in manual data entry and ensures reliable cost estimation for concrete, rebar, formwork, and structural steel.',
+      ],
+      isOpen: false,
+    },
+    {
+      title: 'Can AISIMS handle design changes during construction?',
+      items: [
+        'Yes. When design changes occur, AISIMS automatically updates all related data and documents — including 2D drawings, Shop Drawings, BBS, and BOQ — in real-time. This maintains perfect synchronization between the BIM model and all construction documents, preventing rework caused by outdated information.',
+      ],
+      isOpen: false,
+    },
+    {
       title:
-        'Frequently asked questions guides for common issues 1? Frequently questions guides for common issues 1? Frequently asked questions guides for common issues 1?',
-      items: ['Contents Contents Contents'],
+        'How does the rebar optimization engine reduce costs and CO₂ emissions?',
+      items: [
+        'The AI optimization engine simulates tens of thousands of cutting combinations, targeting Near Zero Rebar Cutting Waste. It maximizes material utilization by recommending optimal special-length rebars and evaluating coupler vs. lap splice options, directly reducing both material costs and carbon emissions.',
+      ],
       isOpen: false,
     },
     {
-      title: 'Frequently asked questions guides for common issues 2?',
-      items: ['Contents Contents Contents'],
-      isOpen: false,
-    },
-    {
-      title: 'Frequently asked questions guides for common issues 3?',
-      items: ['Contents Contents Contents'],
-      isOpen: false,
-    },
-    {
-      title: 'Frequently asked questions guides for common issues 4?',
-      items: ['Contents Contents Contents'],
-      isOpen: false,
-    },
-    {
-      title: 'Frequently asked questions guides for common issues 5?',
-      items: ['Contents Contents Contents'],
+      title: 'What file formats does AISIMS accept and output?',
+      items: [
+        'AISIMS accepts 2D structural drawings in PDF and image formats, using AI parsing algorithms to extract structural data automatically. It outputs IFC 4.3–compliant BIM models, 2D detail drawings, Shop Drawings, Bar Bending Schedules (BBS), Bar Cutting Lists (BCL), and Bills of Quantities (BOQ).',
+      ],
       isOpen: false,
     },
   ]

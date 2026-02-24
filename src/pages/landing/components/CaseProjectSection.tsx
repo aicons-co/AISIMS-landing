@@ -4,27 +4,43 @@ export function CaseProjectSection() {
   //
   const caseProjectCards = [
     {
-      title: 'Residential buildings',
-      attribute: 'key attribute(디자인 시안 진행중)',
-      items: ['(시안 진행중)', '(시안 진행중)', '(시안 진행중)'],
+      title: 'Residential Buildings',
+      attribute: 'Rebar-inclusive BIM & automation',
+      items: [
+        'Full rebar detailing BIM for columns, beams, slabs, and walls',
+        'One-click Shop Drawings, BBS, and BOQ generation',
+        'Up to 30% rebar cutting waste reduction via AI optimization',
+      ],
       image: KeyIcon,
     },
     {
-      title: 'Commercial buildings',
-      attribute: 'key attribute(시안 진행중)',
-      items: ['(시안 진행중)', '(시안 진행중)', '(시안 진행중)'],
+      title: 'Commercial Buildings',
+      attribute: 'End-to-end QTO & design sync',
+      items: [
+        'Multi-story structural BIM modeling in hours, not months',
+        '99.9% accurate automated quantity take-off',
+        'Real-time design change sync across all documents',
+      ],
       image: KeyIcon,
     },
     {
-      title: 'Massive diaphragm wall',
-      attribute: 'key attribute(시안 진행중)',
-      items: ['(시안 진행중)', '(시안 진행중)', '(시안 진행중)'],
+      title: 'Massive Diaphragm Wall',
+      attribute: 'Heavy-rebar detailing & optimization',
+      items: [
+        'Dense rebar arrangement BIM for diaphragm walls',
+        'Special-length rebar optimization for large members',
+        'Coupler vs. lap splice analysis with CO₂ reporting',
+      ],
       image: KeyIcon,
     },
     {
-      title: 'Before/After comparison',
-      attribute: 'key attribute(시안 진행중)',
-      items: ['(시안 진행중)', '(시안 진행중)', '(시안 진행중)'],
+      title: 'Before / After Comparison',
+      attribute: 'Measurable project transformation',
+      items: [
+        'BIM modeling: months → hours (90%+ time savings)',
+        'Documents: manual rework → one-click automation',
+        'Rebar waste: industry average → near-zero',
+      ],
       image: KeyIcon,
     },
   ];
@@ -57,21 +73,39 @@ export function CaseProjectSection() {
                   {card.title}
                 </h3>
 
-                {/* 카드 내용(리스트) */}
-                {/* space-y- 자식 요소들간 세로 간격 / leading 행간 */}
-                <ul className="w-full text-left space-y-1">
-                  {card.items.map((item, idx) => (
-                    <li
-                      key={idx}
-                      className="flex text-base  text-neutral-600 leading-7"
-                    >
-                      <span className="flex items-start">
-                        <span className="mt-3 mr-2 w-1 h-1 bg-neutral-600 rounded-full shrink-0" />
-                        {item}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
+                {/* 타임라인 리스트 */}
+                <div className="flex mt-5">
+                  {/* 왼쪽 타임라인 (체크 아이콘 + 세로선) */}
+                  <div className="flex flex-col items-center mr-3 shrink-0">
+                    <img
+                      src={card.image}
+                      alt="check icon"
+                      className="w-6 h-6 relative z-10"
+                    />
+                    <div
+                      className="
+                        flex-1 w-[3px] -mt-0.5
+                        bg-linear-to-b from-secondary-secondary/50 to-transparent
+                        rounded-full
+                        "
+                    />
+                  </div>
+
+                  {/* 오른쪽 불릿 리스트 */}
+                  <ul className="w-full text-left space-y-1">
+                    {card.items.map((item, idx) => (
+                      <li
+                        key={idx}
+                        className="flex text-base text-neutral-600 leading-7"
+                      >
+                        <span className="flex items-start">
+                          <span className="mt-3 mr-2 w-1 h-1 bg-neutral-600 rounded-full shrink-0" />
+                          {item}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             ))}
           </div>
