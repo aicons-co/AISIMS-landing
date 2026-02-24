@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import LogoWhite from '../assets/Logo-white.svg';
 import LogoBlack from '../assets/Logo-black.svg';
 
@@ -30,7 +29,6 @@ const navItems: { label: string; key: SectionKey }[] = [
 
 export function Header({ onScrolled }: HeaderProps) {
   const [scrolled, setScrolled] = useState(false);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {

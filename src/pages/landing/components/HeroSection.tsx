@@ -1,10 +1,7 @@
-import { useNavigate } from 'react-router-dom';
 import heroIllust from '../assets/hero-illust.png';
 import AIIcon from '../assets/AI-icon.png';
 
 export function HeroSection() {
-  const navigate = useNavigate();
-
   return (
     <section className="bg-[#020403]">
       {/* relative: 내부 absolute 요소(이미지)의 기준점 */}
