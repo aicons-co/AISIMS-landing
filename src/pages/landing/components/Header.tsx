@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
-
+import { useNavigate } from 'react-router-dom';
 import LogoWhite from '../assets/Logo-white.svg';
 import LogoBlack from '../assets/Logo-black.svg';
 
 const SECTION_KEYS = [
   'home',
+  'measurableValue',
   'services',
   'technology',
   'resources',
@@ -19,6 +20,7 @@ type HeaderProps = {
 
 const navItems: { label: string; key: SectionKey }[] = [
   { label: 'Home', key: 'home' },
+  { label: 'MeasurableValue', key: 'measurableValue' },
   { label: 'Services', key: 'services' },
   { label: 'Technology', key: 'technology' },
   { label: 'Resources', key: 'resources' },
@@ -28,6 +30,8 @@ const navItems: { label: string; key: SectionKey }[] = [
 
 export function Header({ onScrolled }: HeaderProps) {
   const [scrolled, setScrolled] = useState(false);
+  const navigate = useNavigate();
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 0);
@@ -74,7 +78,7 @@ export function Header({ onScrolled }: HeaderProps) {
           </nav>
 
           <button
-            onClick={() => window.open('http://158.247.252.50', '_blank')}
+            onClick={() => navigate('/landing')}
             className="
             flex items-center
             px-6 py-2.5

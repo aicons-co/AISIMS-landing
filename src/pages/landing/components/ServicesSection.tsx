@@ -1,9 +1,9 @@
-import BIMIcon from '../assets/services-icon-structural-bim.png'
-import DocAutoIcon from '../assets/services-icon-documents-automation.png'
-import RebarOptIcon from '../assets/services-icon-documents-automation.png'
-import QTOIcon from '../assets/services-icon-structural-qto.png'
-import PlanningIcon from '../assets/services-icon-structural-planning.png'
-import ClashDetectIcon from '../assets/services-icon-clash-detection.png'
+import BIMIcon from '../assets/services-icon-structural-bim.png';
+import DocAutoIcon from '../assets/services-icon-documents-automation.png';
+import RebarOptIcon from '../assets/services-icon-documents-automation.png';
+import QTOIcon from '../assets/services-icon-structural-qto.png';
+import PlanningIcon from '../assets/services-icon-structural-planning.png';
+import ClashDetectIcon from '../assets/services-icon-clash-detection.png';
 
 const servicesCards = [
   {
@@ -72,7 +72,7 @@ const servicesCards = [
     icon: ClashDetectIcon,
     isActive: false,
   },
-]
+];
 
 export function ServicesSection() {
   return (
@@ -98,7 +98,6 @@ export function ServicesSection() {
                   border border-neutral-400
                   hover:border-[#1BC1D7]
                   hover:shadow-[3px_10px_20px_#1BC1D7]/15
-                  hover:cursor-pointer
                 `}
               >
                 <img
@@ -132,5 +131,5 @@ export function ServicesSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

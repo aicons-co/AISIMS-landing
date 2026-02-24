@@ -1,7 +1,7 @@
-import StructuralIcon from '../assets/resources-icon-structural-data.png'
-import PhysicalIcon from '../assets/resources-icon-physical-resources.png'
-import CarbonIcon from '../assets/resources-icon-cost-carbon-data.png'
-import ASIMSPartnerIcon from '../assets/resources-icon-partner-data.png'
+import StructuralIcon from '../assets/resources-icon-structural-data.png';
+import PhysicalIcon from '../assets/resources-icon-physical-resources.png';
+import CarbonIcon from '../assets/resources-icon-cost-carbon-data.png';
+import ASIMSPartnerIcon from '../assets/resources-icon-partner-data.png';
 
 export function ResourcesSection() {
   const resourcesCards = [
@@ -36,7 +36,7 @@ export function ResourcesSection() {
       ],
       image: ASIMSPartnerIcon,
     },
-  ]
+  ];
 
   return (
     <section className=" bg-[#F7F7F8]">
@@ -60,7 +60,6 @@ export function ResourcesSection() {
                   border border-neutral-400 rounded-[20px]
                   hover:border-secondary-secondary
                   hover:shadow-[3px_10px_20px_#9244FF]/15
-                  hover:cursor-pointer
                 `}
               >
                 <div className="flex justify-between mb-12.5">
@@ -95,5 +94,5 @@ export function ResourcesSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

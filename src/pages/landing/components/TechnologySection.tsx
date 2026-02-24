@@ -97,7 +97,6 @@ export function TechnologySection() {
                   border border-[#333B68] rounded-[20px]
                   hover:border-[#1BC1D7]
                   hover:shadow-[0_0_20px_#1BC1D7]/15
-                  hover:cursor-pointer
                   z-10
                 `}
               >
